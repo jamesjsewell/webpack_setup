@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js -p",
-    "start": ""
+    "start": "webpack-dev-server --open -d"
   },
   "author": "jamesjsewell",
   "license": "ISC",
   "devDependencies": {
     "html-webpack-plugin": "^3.0.6",
     "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.12"
+    "webpack-cli": "^2.0.12",
+    "webpack-dev-server": "^3.1.1"
   }
 }

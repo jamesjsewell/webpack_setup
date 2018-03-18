@@ -13,6 +13,10 @@ const config = {
       { test: /\.txt$/, use: 'raw-loader' }
     ]
   },
+  devtool: 'inline-source-map',
+  devServer: {
+        contentBase: './dist'
+    },
   plugins: [
     new HtmlWebpackPlugin({template: './index.html'})
   ]
