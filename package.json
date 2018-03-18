@@ -1,0 +1,17 @@
+{
+  "name": "webpack_setup",
+  "version": "1.0.0",
+  "description": "basic webpack setup",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js -p",
+    "start": ""
+  },
+  "author": "jamesjsewell",
+  "license": "ISC",
+  "devDependencies": {
+    "html-webpack-plugin": "^3.0.6",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12"
+  }
+}
