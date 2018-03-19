@@ -11,7 +11,22 @@ const config = {
   },
   module: {
     rules: [
-      { test: /\.txt$/, use: 'raw-loader' }
+      { test: /\.txt$/, 
+        use: 'raw-loader' 
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          'file-loader'
+        ]
+      }
     ]
   },
   devtool: 'inline-source-map',
