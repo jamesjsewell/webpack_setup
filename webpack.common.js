@@ -9,28 +9,32 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /\.txt$/, 
-            use: 'raw-loader' 
+            {   
+                test: /\.txt$/, 
+                use: 'raw-loader' 
             },
             {
-            test: /\.css$/,
-            use: [
-                'style-loader',
-                'css-loader'
-            ]
-            },
-            {
-            test: /\.(png|svg|jpg|gif)$/,
-            use: [
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
                 'file-loader'
-            ]
+                ]
+            },
+            {
+                test: /\.scss$/,
+                use: [{
+                    loader: "style-loader" // creates style nodes from JS strings
+                }, {
+                    loader: "css-loader" // translates CSS into CommonJS
+                }, {
+                    loader: "sass-loader" // compiles Sass to CSS
+                }]
             }
         ]
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-        title: 'Production'
+        title: 'webpack_setup'
         })
     ],
     
