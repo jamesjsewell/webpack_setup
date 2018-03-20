@@ -26,6 +26,5 @@ module.exports = merge(common, {
         new UglifyJSPlugin(),
         new ExtractTextPlugin('style.css')
     ]
-
     
 });

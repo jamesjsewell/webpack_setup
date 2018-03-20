@@ -4,16 +4,6 @@ const webpack = require('webpack'); //to access built-in plugins
 
 module.exports = merge(common, {
     target: 'web',
-    devtool: 'inline-source-map',
-    devServer: {
-        contentBase: './dist',
-        port: 3000,
-        hot: true,
-        open: true,
-        watchOptions: {
-            poll: true
-        }
-    },
     module: {
         rules: [
             {
@@ -34,6 +24,16 @@ module.exports = merge(common, {
                 ]
             }
         ]
+    },
+    devtool: 'inline-source-map',
+    devServer: {
+        contentBase: './dist',
+        port: 3000,
+        hot: true,
+        open: true,
+        watchOptions: {
+            poll: true
+        }
     },
     plugins: [
         new webpack.NamedModulesPlugin(),
