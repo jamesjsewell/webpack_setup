@@ -15,10 +15,12 @@ module.exports = merge(common, {
                   fallback: 'style-loader',
                   use: [
                     { loader: 'css-loader', options: { importLoaders: 1 } },
-                    'postcss-loader', 'sass-loader'
+                    { loader: 'postcss-loader' }, 
+                    { loader: 'sass-loader' }
                   ]
                 })
-            }]
+            }
+        ]
     },
     plugins: [
         new UglifyJSPlugin(),
