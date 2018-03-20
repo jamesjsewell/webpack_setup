@@ -4,3 +4,6 @@ setup that includes a build tool and a dev server. Has HMR or hot module replace
 * npm install
 * npm run start, starts the dev server and opens your app in a new browser tab
 * npm run build, populates a dist folder with the minified js bundle, minified css, and the html file. Use these files in production
+
+I developed this by reading the documentation straight from the webpack website. https://webpack.js.org/
+This is webpack 4. To get all of these features working requires quite a bit of npm packages.
