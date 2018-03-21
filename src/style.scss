@@ -2,6 +2,17 @@
     color: yellowgreen;
     .world{
         color: white;
-        background: blueviolet;
+        box-shadow: 2rem 2rem;
+
+
+        background-color: red;
+        animation-name: example;
+        animation-duration: 4s;
+        
+        @keyframes example {
+            from {background-color: red;}
+            to {background-color: yellow;}
+        }
+        
     }
 }

@@ -7,23 +7,32 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = merge(common, {
     
     target: 'web',
+    devtool: 'source-map',
     module: {
         rules: [
             {
                 test: /\.scss$/,
-                use: ExtractTextPlugin.extract({
-                  fallback: 'style-loader',
-                  use: [
-                    { loader: 'css-loader', options: { importLoaders: 1 } },
-                    { loader: 'postcss-loader' }, 
-                    { loader: 'sass-loader' }
-                  ]
-                })
-            }
+                use: 
+
+                ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [
+                        { loader: 'css-loader', options: { sourceMap: true, importLoaders: 1 } },
+                        { loader: 'postcss-loader', options: { sourceMap: true, config: {
+                            ctx: {
+                            cssnext: {},
+                            cssnano: {}
+                            }
+                        } } },
+                        { loader: 'sass-loader', options: { sourceMap: true}}
+                        
+                    ]
+                }) 
+            },
         ]
     },
     plugins: [
-        new UglifyJSPlugin(),
+        new UglifyJSPlugin({sourceMap: true}),
         new ExtractTextPlugin('style.css')
     ]
     
