@@ -3,6 +3,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const common = require('./webpack.common.js');
 const webpack = require('webpack'); //to access built-in plugins
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const path = require('path');
 
 module.exports = merge(common, {
     
@@ -34,6 +35,10 @@ module.exports = merge(common, {
     plugins: [
         new UglifyJSPlugin({sourceMap: true}),
         new ExtractTextPlugin('style.css')
-    ]
+    ],
+    output: {
+        filename: 'webpack.bundle.js',
+        path: path.resolve(__dirname, 'dist')
+    }
     
 });

@@ -9,37 +9,16 @@ module.exports = merge(common, {
             {
                 test: /\.scss$/,
                 use: [
-                    {
-                        loader: "style-loader",
-                        options:{
-                            sourceMap: true
-                        }
-                    }, 
-                    {
-                        loader: "css-loader",
-                        options: {
-                            sourceMap: true
-                        }
-                    }, 
-                    {
-                        loader: "postcss-loader",
-                        options: {
-                            sourceMap: true
-                        }
-                    },
-                    {
-                        loader: "sass-loader",
-                        options: {
-                            sourceMap: true
-                        }
-                    }
+                    "style-loader",
+                    "css-loader",
+                    "sass-loader",            
                 ]
             }
         ]
     },
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: './dist',
+        contentBase: './',
         port: 3000,
         hot: true,
         open: true,
