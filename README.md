@@ -1,5 +1,5 @@
 # webpack_setup
-setup that includes a build tool and a dev server. Has HMR or hot module replacement while coding so you don't have to refresh the browser when you make a change to your code. Processes the sass you write into minified css, and uses postcss which does auto-prefixing so you don't have to bother with typing prefixes for cross browser support.
+setup that includes a build tool and a dev server. Has HMR or hot module replacement while coding so you don't have to refresh the browser when you make a change to your code. Processes the sass you write into minified css, and uses postcss(nextcss, nanocss) which does auto-prefixing so you don't have to bother with typing prefixes for cross browser support. creates source maps for your production code, for the css/js minified files, that way you can accurately debug your app in production.
 
 * npm install
 * npm run start, starts the dev server and opens your app in a new browser tab
