@@ -13,12 +13,19 @@ module.exports = merge(common, {
                     "css-loader",
                     "sass-loader",            
                 ]
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                  loader: "babel-loader"
+                }
             }
         ]
     },
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: './',
+        contentBase: './dist',
         port: 3000,
         hot: true,
         open: true,

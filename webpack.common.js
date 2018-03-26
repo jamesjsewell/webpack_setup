@@ -23,7 +23,9 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-        title: 'webpack_setup'
+            title: 'webpack_setup',
+            template: "./src/index.html",
+            filename: "./index.html"
         })
     ],
 };
