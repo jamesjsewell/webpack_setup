@@ -4,7 +4,7 @@ import './style.scss';
 import example from './example/example_module.js'
 
 const Index = () => {
-  return <div>Hello React! !</div>;
+  return <div className="hello">Hello React! <div className="world">hello world</div></div>;
 };
 
 ReactDOM.render(<Index />, document.getElementById("index"));
