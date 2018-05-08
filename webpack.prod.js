@@ -1,9 +1,10 @@
-const merge = require('webpack-merge');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const common = require('./webpack.common.js');
-const webpack = require('webpack'); //to access built-in plugins
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const path = require('path');
+const merge = require('webpack-merge')
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+const common = require('./webpack.common.js')
+const webpack = require('webpack') //to access built-in plugins
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const ExtractTextPlugin = require("extract-text-webpack-plugin")
+const path = require('path')
 
 module.exports = merge(common, {
     
@@ -33,6 +34,7 @@ module.exports = merge(common, {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin(['dist']),
         new UglifyJSPlugin({sourceMap: true}),
         new ExtractTextPlugin('style.css')
     ],
@@ -41,4 +43,4 @@ module.exports = merge(common, {
         path: path.resolve(__dirname, 'dist')
     }
     
-});
+})

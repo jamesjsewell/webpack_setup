@@ -1,6 +1,7 @@
-const merge = require('webpack-merge');
-const common = require('./webpack.common.js');
-const webpack = require('webpack'); //to access built-in plugins
+const merge = require('webpack-merge')
+const common = require('./webpack.common.js')
+const webpack = require('webpack') //to access built-in plugins
+const path = require('path')
 
 module.exports = merge(common, {
     target: 'web',
@@ -16,21 +17,27 @@ module.exports = merge(common, {
             }
         ]
     },
-    devtool: 'inline-source-map',
     devServer: {
-        contentBase: './dist',
-        port: 3000,
+
         hot: true,
-        open: true,
+        host: 'localhost',
         watchOptions: {
             poll: true
-        }
+        },
+        proxy: {
+            "/api": "http://localhost:3000"
+        },
+        historyApiFallback: {
+            index: 'index.html'
+        },
+        port: 8080
     },
+    devtool: 'inline-source-map',
     plugins: [
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
-      ]
-});
-
-
-
+    ],
+    output: {
+        publicPath: "/"
+    }
+})

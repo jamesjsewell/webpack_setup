@@ -1,4 +1,3 @@
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack'); //to access built-in plugins
 
@@ -19,20 +18,24 @@ module.exports = {
                 ]
             },
             {
-                test: /\.js$/,
-                exclude: /node_modules/,
+                test: /\.(js|jsx)$/,
+                exclude: [/node_modules/, /backend/],
                 use: {
-                  loader: "babel-loader"
+                  loader: "babel-loader",
+                  options: {
+                    cacheDirectory: true,
+                    ignore: /backend/
+                  }
                 }
             }
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(['dist']),
+
         new HtmlWebpackPlugin({
             title: 'webpack_setup',
             template: "./src/index.html",
-            filename: "./index.html"
+            filename: "index.html"
         })
-    ],
+    ]
 };
