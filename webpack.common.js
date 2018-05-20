@@ -27,6 +27,13 @@ module.exports = {
                     ignore: /backend/
                   }
                 }
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    "style-loader",
+                    "css-loader"           
+                ]
             }
         ]
     },
