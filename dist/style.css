@@ -1,2 +1,24 @@
-.hello{color:#9acd32}.hello .world{color:#fff;-webkit-box-shadow:2rem 2rem;box-shadow:2rem 2rem;background-color:#add8e6;-webkit-animation-name:a;animation-name:a;-webkit-animation-duration:10s;animation-duration:10s}@-webkit-keyframes a{0%{background-color:#add8e6}to{background-color:#90ee90}}@keyframes a{0%{background-color:#add8e6}to{background-color:#90ee90}}
+.hello {
+  color: yellowgreen; }
+  .hello .world {
+    color: white;
+    box-shadow: 2rem 2rem;
+    background-color: lightblue;
+    -webkit-animation-name: example;
+            animation-name: example;
+    -webkit-animation-duration: 10s;
+            animation-duration: 10s; }
+
+@-webkit-keyframes example {
+  from {
+    background-color: lightblue; }
+  to {
+    background-color: lightgreen; } }
+
+@keyframes example {
+  from {
+    background-color: lightblue; }
+  to {
+    background-color: lightgreen; } }
+
 /*# sourceMappingURL=style.css.map*/
